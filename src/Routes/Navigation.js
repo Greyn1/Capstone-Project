@@ -6,7 +6,7 @@ import { signOutUser } from "../Utils/Firebase";
 import CartIcon from "../Components/CartIcon";
 import CartDropdown from "../Components/CartDropdown";
 import { ReactComponent as CrwnLogo } from '../Assets/crown.svg';
-import '../Styles/Navigation.styles.scss';
+import { LogoContainer, NavigationContainer, NavLink, NavLinks } from "../Styles/Navigation.styles";
 
 function Navigation() {
     const { curUser } = useContext(UserContext);
@@ -15,21 +15,21 @@ function Navigation() {
 
     return (
         <>
-            <div className="navigation">
-                <Link to='/' className="logo-container" >
+            <NavigationContainer>
+                <LogoContainer as={Link} to='/' > 
                     <CrwnLogo className="logo" />
-                </Link>
-                <div className="nav-links-container" >
-                    <Link to='/shop' className="nav-link" >SHOP</Link>
+                </LogoContainer>
+                <NavLinks>
+                    <NavLink to='/shop' as={Link}>SHOP</NavLink>
                     {
-                        curUser ? (<span className="nav-link" onClick={signOutUser}>SIGN OUT</span>)
+                        curUser ? (<NavLink as='span' onClick={signOutUser}>SIGN OUT</NavLink>)
                             :
-                            (<Link to='/auth' className="nav-link" >SIGN IN</Link>)
+                            (<NavLink as={Link} to='/auth'>SIGN IN</NavLink>)
                     }
                     <CartIcon />
-                </div>
+                </NavLinks>
                 {isCartOpen && <CartDropdown />}
-            </div>
+            </NavigationContainer>
             <Outlet />
         </>
     );
