@@ -3,8 +3,8 @@ import { Link, Outlet } from "react-router-dom";
 import { UserContext } from "../Contexts/UserContext";
 import { CartContext } from "../Contexts/CartContext";
 import { signOutUser } from "../Utils/Firebase";
-import CartIcon from "../Components/CartIcon";
-import CartDropdown from "../Components/CartDropdown";
+import CartIcon from "../components/CartIcon";
+import CartDropdown from "../components/CartDropdown";
 import { ReactComponent as CrwnLogo } from '../Assets/crown.svg';
 import { LogoContainer, NavigationContainer, NavLink, NavLinks } from "../Styles/Navigation.styles";
 

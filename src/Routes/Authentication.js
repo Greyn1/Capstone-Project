@@ -1,5 +1,5 @@
-import SignInForm from "../Components/SignInForm";
-import SignUpForm from "../Components/SignUpForm";
+import SignInForm from "../components/SignInForm";
+import SignUpForm from "../components/SignUpForm";
 import '../Styles/Authentication.styles.scss';
 
 export default function Authentication() {
