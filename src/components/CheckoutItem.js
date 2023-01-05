@@ -1,8 +1,8 @@
-import { useContext } from 'react';
+import { useContext, memo} from 'react';
 import { CartContext } from '../Contexts/CartContext';
 import '../Styles/CheckoutItem.styles.scss';
 
-const CheckoutItem = ({ cartItem }) => {
+const CheckoutItem = memo(({ cartItem }) => {
     const { name, imageUrl, price, quantity } = cartItem;
     const { clearItemFromCart, addItemToCart, removeItemToCart } = useContext(CartContext);
     const clearItemHandler = () => clearItemFromCart(cartItem);
@@ -23,6 +23,6 @@ const CheckoutItem = ({ cartItem }) => {
             <div onClick={clearItemHandler} className='remove-button'>&#10005;</div>
         </div>
     );
-}
+})
 
 export default CheckoutItem;
