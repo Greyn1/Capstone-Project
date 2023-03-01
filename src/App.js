@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { GlobalStyle } from './global.styles';
 import Spinner from './components/spinner/Spinner';
 
 const Home = lazy(() => import('./Routes/Home'));
@@ -11,6 +12,7 @@ const Authentication = lazy(() => import('./Routes/Authentication'));
 const App = () => {
   return (
     <Suspense fallback={<Spinner />}>
+      <GlobalStyle />
       <Routes>
         <Route path='/' element={<Navigation />} >
           <Route index={true} element={<Home />} />

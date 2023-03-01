@@ -7,12 +7,22 @@ export const NavigationContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 768px){
+    height: 60px;
+    padding: 10px 20px;
+  }
 `;
 
 export const LogoContainer = styled(Link)`
   height: 100%;
   width: 70px;
   padding: 25px;
+
+  @media screen and (max-width: 768px){
+    width: 50px;
+    padding: 0px;
+  }
 `;
 
 export const NavLinks = styled.div`
@@ -21,7 +31,11 @@ export const NavLinks = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-top: 20px;
+  ${'' /* padding-top: 20px; */}
+
+  @media screen and (max-width: 768px){
+    width: 80%;
+  }
 `;
 
 export const NavLink = styled(Link)`

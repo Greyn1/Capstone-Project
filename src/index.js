@@ -6,7 +6,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { UserProvider } from './Contexts/UserContext';
 import { CartProvider } from './Contexts/CartContext';
 import { CategoriesProvider } from './Contexts/CategoriesContext';
-import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
